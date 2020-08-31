@@ -26,19 +26,23 @@ function isValidEmail(email) {
 
 //Check required fileds
 function checkRequired(inputArr) {
-  inputArr.forEach(function(input) {
-    if(input.value.trim() === '') {
-      showError(input, 'is required');
+  inputArr.forEach(function (input) {
+    if (input.value.trim() === '') {
+      showError(input, `${getFieldName(input)} is required`);
     } else {
       showSuccess(input);
     }
   });
 }
 
+//Get fieldName
+function getFieldName(input) {
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+
 //Event Listeners
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
-  checkRequired( [username, email, password, password2] );
-
+  checkRequired([username, email, password, password2]);
 });
