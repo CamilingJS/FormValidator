@@ -27,30 +27,4 @@ function isValidEmail(email) {
 //Event Listeners
 form.addEventListener('submit', function (e) {
   e.preventDefault();
-
-  if (username.value === '') {
-    showError(username, 'Username is requred');
-  } else {
-    showSuccess(username);
-  }
-
-  if (email.value === '') {
-    showError(email, 'Email is requred');
-  } else if (!isValidEmail(email.value)) {
-    showError(email, 'Email is not valid');
-  } else {
-    showSuccess(email);
-  }
-
-  if (password.value === '') {
-    showError(password, 'Password is requred');
-  } else {
-    showSuccess(password);
-  }
-
-  if (password2.value === '') {
-    showError(password2, 'Password 2 is requred');
-  } else {
-    showSuccess(password2);
-  }
 });
